@@ -1,11 +1,11 @@
 html {
-    overflow: hidden;
+    
 }
 .header {
     background: #1EBFC2;
     color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 15px #ef426d;
+    box-shadow: 0px 0px 50px 25px #f42256;
     opacity: 70%;
 }
 h1 {
@@ -13,19 +13,24 @@ h1 {
 }
 body {
     height: 100vh;
-    background: linear-gradient(white,#f7bd48, #d05205)
     
+    background: linear-gradient(white,#f7bd48,#d05205 70%)
+    
+}
+hr.line {
+    border: 2px solid #f42256;
+    background-color: #f42256;
 }
 .container {
     background: #1EBFC2;
     opacity: 70%;
     box-shadow: 0px 0px 30px 15px #ef426d;
-    border: 3px solid white;
+    border: 3px solid #f42256;
     border-radius: 10px;
     margin: 0 auto;
     padding: 10px;
     width: 30%;
-    
+    box-shadow: 10px 15px black;
 }
 .select-container {
     font-family: 'Cinzel';
@@ -42,9 +47,23 @@ body {
     text-align: center;
     color: white;
 }
+.coffee-list {
+    border: 1px solid #ef426d;
+    box-shadow: 10px 15px black;
+    background: #1EBFC2;
+    opacity: 70%;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;;
+    bottom: 80vh;
+    width: 30%;
+    height: 50vh;
+    overflow: scroll;
+}
 #tree {
-    position: absolute;
-    top: 43%;
+    position: relative;
+    top: 19vh;
     left: 60%;
     width: 20%;
     height: 60%;
@@ -52,12 +71,12 @@ body {
     z-index: -1;
 }
 #sun {
-    background: #FFDD00;
+    background: #ffdd00ad;
     
     box-shadow: 0px 0px 45px 35px #FFDD00;
     border-radius: 50%;
     position: relative;
-    top: 20%;
+    top: -40vh;
     left:65%;
     width: 300px;
     height: 300px;
