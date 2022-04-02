@@ -1,0 +1,77 @@
+body {
+    margin: auto;
+    background-image: url('./img/70_background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#title {
+    font-family: 'Shrikhand';
+    font-size: 5rem;
+    color: #e9bd3a;
+     -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #d35b4d;
+    text-shadow: 8px 8px #d35b4d;
+    text-align: center;
+
+
+}
+.heading {
+    position: relative;
+}
+.container{
+    margin: 0 auto;
+    background-color: #F7EDE2;
+    opacity: 90%;
+    border-radius: 10px;
+    border: 5px solid #d35b4d;
+    box-shadow: 8px 8px #81372f;
+    position: relative;
+    width: 50rem;
+    height: 20%;
+    text-align: center;
+    font-family: 'Bungee';
+}
+.select-container {
+    position: relative;
+    margin: 0 auto;
+    top: 2rem;
+}
+hr.line {
+    border: 2px solid #81372f;
+    background-color: #81372f;
+    width: 80%;
+}
+.submit-button{
+    background-color: #d35b4d;
+    color: white;
+    border-radius: 10px;
+}
+.add-coffee-head{
+    color: #e9bd3a;
+     -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #d35b4d;
+    text-shadow: 5px 5px #d35b4d;
+    text-align: center
+}
+.coffee-list{
+    background-color: #F7EDE2;
+    opacity: 80%;
+    border-radius: 10px;
+    border: 5px solid #d35b4d;
+    box-shadow: 8px 8px #81372f;
+    opacity: 70%;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 3rem;
+    
+    width: 50rem;
+    height: 50vh;
+    overflow: scroll;
+}
+.add-coffee-container{
+    position: relative;
+    margin: 0 auto;
+    bottom: 2rem;
+}

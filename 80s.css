@@ -1,22 +1,29 @@
-html {
-    
+#title {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: 'Fugaz One', cursive;
+    margin: 0;
+    padding: 3rem;
+    color: #f7003e;
+    text-shadow: 1px 1px 8px #65021b, 0 0 3em #ff0040, 0 0 0.7em #fa0341;
+    text-decoration: underline;
 }
-.header {
-    background: #1EBFC2;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 50px 25px #f42256;
-    opacity: 70%;
+
+.heading{
+    position: relative;
+    height: 3rem;
+    width: 40rem;
 }
+
 h1 {
     font-family: 'Kaushan Script';
 }
 body {
     height: 100vh;
-    
-    background: linear-gradient(white,#f7bd48,#d05205 70%)
+    background: linear-gradient(white,#f7bd48,#d05205 70%);
     
 }
+
 hr.line {
     border: 2px solid #f42256;
     background-color: #f42256;
@@ -60,6 +67,22 @@ hr.line {
     width: 30%;
     height: 50vh;
     overflow: scroll;
+}
+.submit-button {
+    background: #1EBFC2;
+    color: white;
+    border-radius: 3px;
+}
+.roast-select{
+    font-family: 'Cinzel';
+    background-color:white;
+    font-weight: 1000;
+    border-radius: 3px;
+}
+.search-bar{
+    border-radius: 3px;
+    font-family: 'Cinzel';
+    font-weight: 1000;
 }
 #tree {
     position: relative;
