@@ -68,6 +68,8 @@ hr.line {
     width: 50rem;
     height: 50vh;
     overflow: scroll;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #070707;
 }
 
 .add-coffee-container{

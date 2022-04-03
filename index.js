@@ -1,36 +1,75 @@
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {name: 'Light City', roast: 'light'},
+    {name: 'Half City', roast: 'light'},
+    {name: 'Cinnamon', roast: 'light'},
+    {name: 'City', roast: 'medium'},
+    {name: 'American', roast: 'medium'},
+    {name: 'Breakfast', roast: 'medium'},
+    {name: 'High', roast: 'dark'},
+    {name: 'Continental', roast: 'dark'},
+    {name: 'New Orleans', roast: 'dark'},
+    {name: 'European', roast: 'dark'},
+    {name: 'Espresso', roast: 'dark'},
+    {name: 'Viennese', roast: 'dark'},
+    {name: 'Italian', roast: 'dark'},
+    {name: 'French', roast: 'dark'},
 ];
-
 var list = '';
 coffees.forEach(function(coffee) {
     if (coffee.roast == 'dark') {
-        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:black'>" + coffee.roast + "</span>" + "\n" ;
+        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:black;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
     }
     if (coffee.roast == 'medium') {
-        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:brown'>" + coffee.roast + "</span>" + "\n" ;
+        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:brown;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
     }
     if (coffee.roast == 'light') {
-        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:bisque'>" + coffee.roast + "</span>" + "\n" ;
+        list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:orange;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
     }
-
-
+});
+document.getElementById('coffee-list').innerHTML = (list);
+//filter list by roast type id=roast-select
+var roast = document.getElementById('roast-select');
+roast.addEventListener('change', function(e) {
+    var roastType = e.target.value;
+    var filteredCoffees = coffees.filter(function(coffee) {
+        return coffee.roast === roastType;
+    });
+    var list = '';
+    filteredCoffees.forEach(function(coffee) {
+        if (coffee.roast == 'dark') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:black;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'medium') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:brown;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'light') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:orange;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+    });
+    document.getElementById('coffee-list').innerHTML = (list);
+});
+//filter list by name id=search-bar
+var search = document.getElementById('search-bar');
+search.addEventListener('keyup', function(e) {
+    var searchTerm = e.target.value;
+    var filteredCoffees = coffees.filter(function(coffee) {
+        return coffee.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    var list = '';
+    filteredCoffees.forEach(function(coffee) {
+        if (coffee.roast == 'dark') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:black;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'medium') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:brown;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'light') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:orange;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+    });
+    document.getElementById('coffee-list').innerHTML = (list);
 });
 
-document.getElementById('coffee-list').innerHTML = (list);
 
 
 

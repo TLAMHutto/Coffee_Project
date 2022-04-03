@@ -25,12 +25,12 @@
         </select>
             <label class="coffee-label">Coffee Name</label>
             <input type="text" id="search-bar" class="search-bar" placeholder="Search by coffee name">   
-            <button type="submit" id="submit-button" class="submit-button">Submit</button>
+            
     </form>
     <br>
     <hr class="line">
     <h1 class="add-coffee-head"><em>ADD COFFEE</em></h1>
-    <form class="add-coffee-container">
+    <form onsubmit="return addItem('list', this.inputItem)" class="add-coffee-container">
         <label class="roast-label">Roast</label>
         <select id="roast-select" class="roast-select">
             <option value="light">Light</option>
@@ -38,8 +38,8 @@
             <option value="dark">Dark</option>
         </select>
         <label class="coffee-label-add">Add Name</label>
-            <input type="text" id="add-bar" class="add-bar" placeholder="Add by coffee name">   
-            <button type="submit" id="submit-button" class="submit-button">Submit</button>
+            <input type="text" id="addBar" class="submit" placeholder="Add by coffee name">   
+            <button type="submit" id="submit-button" class="submit">Submit</button>
     </form>
     
 </div>
