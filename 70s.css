@@ -54,22 +54,22 @@ hr.line {
     text-shadow: 5px 5px #d35b4d;
     text-align: center
 }
-.coffee-list{
-    background-color: #F7EDE2;
-    opacity: 80%;
+#coffee-list{
+    background: rgba(247, 237, 226 , .9);
     border-radius: 10px;
     border: 5px solid #d35b4d;
     box-shadow: 8px 8px #81372f;
-    opacity: 70%;
     border-radius: 10px;
     position: relative;
     margin: 0 auto;
     margin-top: 3rem;
-    
+    color: #e9bd3a;
+    font-family: 'Bungee';  
     width: 50rem;
     height: 50vh;
     overflow: scroll;
 }
+
 .add-coffee-container{
     position: relative;
     margin: 0 auto;
