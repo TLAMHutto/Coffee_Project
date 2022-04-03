@@ -69,9 +69,26 @@ search.addEventListener('keyup', function(e) {
     });
     document.getElementById('coffee-list').innerHTML = (list);
 });
-
-
-
+function addNew(input ,value){
+    var newCoffee = document.getElementById('addBar').input = "";
+    var newRoast = document.getElementById('roast-select').value = "";
+    var newCoffee = {name: newCoffee, roast: newRoast};
+    coffees.push(newCoffee);
+    var list = '';
+    coffees.forEach(function(coffee) {
+        if (coffee.roast == 'dark') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:black;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'medium') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:brown;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+        if (coffee.roast == 'light') {
+            list += "<span style=font-size:3rem>" + coffee.name + "</span>" + "<span style='color:orange;font-size:2rem'>" + coffee.roast + "</span>" + "<br>" ;
+        }
+    });
+    document.getElementById('coffee-list').innerHTML = (list);
+}
+console.log(addNew());
 
 
 

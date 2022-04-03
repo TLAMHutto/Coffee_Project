@@ -30,7 +30,7 @@
     <br>
     <hr class="line">
     <h1 class="add-coffee-head"><em>ADD COFFEE</em></h1>
-    <form onsubmit="return addItem('list', this.inputItem)" class="add-coffee-container">
+    <form id="add-coffee-container">
         <label class="roast-label">Roast</label>
         <select id="roast-select" class="roast-select">
             <option value="light">Light</option>
@@ -38,8 +38,8 @@
             <option value="dark">Dark</option>
         </select>
         <label class="coffee-label-add">Add Name</label>
-            <input type="text" id="addBar" class="submit" placeholder="Add by coffee name">   
-            <button type="submit" id="submit-button" class="submit">Submit</button>
+            <input  class="add-input" id="addBar" placeholder="Add new coffee by name" type="text">   
+            <button onclick="submit" class="add-btn" ng-click="addTodo()">Submit</button>
     </form>
     
 </div>
@@ -47,7 +47,9 @@
     <div id="coffee-name"></div>
     <div id="coffee-roast"></div>
 </div>
-    <script src="./index.js"></script>
+    <script src="./index.js">
+        
+    </script>
 </div>
 </body>
 </html>
