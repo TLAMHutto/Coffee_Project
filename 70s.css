@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
 }
 #title {
-    font-family: 'Shrikhand';
+    font-family: 'Chicle';
     font-size: 5rem;
     color: #e9bd3a;
      -webkit-text-stroke-width: 3px;
@@ -64,7 +64,7 @@ hr.line {
     margin: 0 auto;
     margin-top: 3rem;
     color: #e9bd3a;
-    font-family: 'Bungee';  
+    font-family: 'Shrikhand';  
     width: 50rem;
     height: 50vh;
     overflow: scroll;

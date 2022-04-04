@@ -28,12 +28,12 @@ coffees.forEach(function(coffee) {
     }
 });
 document.getElementById('coffee-list').innerHTML = (list);
-//filter list by roast type id=roast-select
+ //filter list by roast type id=roast-select
 var roast = document.getElementById('roast-select');
 roast.addEventListener('change', function(e) {
     var roastType = e.target.value;
     var filteredCoffees = coffees.filter(function(coffee) {
-        return coffee.roast === roastType;
+         return coffee.roast === roastType; 
     });
     var list = '';
     filteredCoffees.forEach(function(coffee) {
