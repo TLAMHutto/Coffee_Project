@@ -13,8 +13,7 @@ body {
     -webkit-text-stroke-color: #d35b4d;
     text-shadow: 8px 8px #d35b4d;
     text-align: center;
-
-
+;
 }
 .heading {
     position: relative;
@@ -76,4 +75,18 @@ hr.line {
     position: relative;
     margin: 0 auto;
     bottom: 2rem;
+}
+.clear {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 3em;
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, .15); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+.clear:hover{
+    border: 2px solid #d35b4d;
+    box-shadow: inset 0 0 4em #ef3e2b;
+    
 }
