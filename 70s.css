@@ -19,6 +19,7 @@
 .input-label{
     color: var(--input-color);
     font-family: 'Bangers';
+    margin-right: .3em;
 }
 .heading {
     position: relative;
@@ -40,19 +41,33 @@
     position: relative;
     margin: 0 auto;
     top: 2rem; 
+    display: flex;
+    justify-content: center;
 }
 
 hr.line {
     border: 2px solid var(--hr-border-color);
     background-color: var(--hr-bg-color);
-    margin-top: 1.2em;
+    margin-top: 1.5em;
     width: 80%;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    
 }
 .submit-button{
     background-color: var(--submit-button-bg-color);
     color: var(--submit-button-text-color);
     border: 1px solid var(--submit-button-border-color);
     border-radius: 10px;
+    cursor: pointer;
+    margin-top: .5em;
+    position: absolute;
+}
+.submit-button:active{
+    border: 2px solid rgb(94, 94, 94);
+    border-style: inset;
 }
 .add-coffee-head{
     color: var(--add-coffee-head-color);
@@ -61,7 +76,7 @@ hr.line {
     text-shadow: 1px 1px var(--text-shadow-color);
     text-align: center;
     font-family: 'Audiowide';
-    margin-bottom: 1.1em;
+    margin-bottom: 1.5em;
 }
 #coffee-list{
     background: var(--coffee-list-bg-color);
