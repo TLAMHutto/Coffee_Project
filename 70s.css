@@ -36,6 +36,7 @@
     height: 20%;
     text-align: center;
     font-family: 'Bungee';
+    
 }
 .select-container {
     position: relative;
@@ -111,6 +112,7 @@ hr.line {
     background-color: var(--clear-bg-color); 
     backdrop-filter: blur(3px);
     z-index: 1;
+    animation: border-pulse 4s infinite;
 }
 @keyframes pulse {
     0%{
@@ -126,5 +128,17 @@ hr.line {
         text-shadow:
     0 0 100px rgba(0, 0, 0 .1),
     
+    }
+}
+@keyframes border-pulse {
+    0%{
+        box-shadow: inset 0 0 1px 1px rgb(255, 1, 221);
+    }
+    
+    50%{
+        box-shadow: inset 0 0 30px 30px rgba(255, 0, 221, 0.377);
+    }
+    100% {
+        box-shadow: inset 0 0 1px 1px rgb(255, 1, 221);
     }
 }
