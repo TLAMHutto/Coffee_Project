@@ -1,29 +1,35 @@
+ @import "70s-two.css";
  body {
     margin: auto;
-    background-image: url('./img/70_background.jpg');
+    background-image: url('./img/AridKaleidoscopicBlacklemur-size_restricted.gif');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
 }
 #title {
-    font-family: 'Chicle';
+    font-family: 'Audiowide';
     font-size: 5rem;
-    color: #e9bd3a;
+    color: var(--title-color);
      -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #d35b4d;
-    text-shadow: 3px 3px #f1d502;
+    -webkit-text-stroke-color: var(--stroke-color);
+    text-shadow: 4px 4px var(--text-shadow-color);
     text-align: center;
+    animation: pulse 2s infinite;
+}
+.input-label{
+    color: var(--input-color);
+    font-family: 'Bangers';
 }
 .heading {
     position: relative;
 }
 .container{
     margin: 0 auto;
-    background-color: #F7EDE2;
+    background-color: var(--container-bg-color);
     opacity: 90%;
     border-radius: 10px;
-    border: 5px solid #d35b4d;
-    box-shadow: 8px 8px #525252;
+    border: 5px solid var(--container-border-color);
+    box-shadow: 8px 8px var(--container-shadow-color);
     position: relative;
     width: 90%;
     height: 20%;
@@ -37,38 +43,43 @@
 }
 
 hr.line {
-    border: 2px solid #81372f;
-    background-color: #81372f;
+    border: 2px solid var(--hr-border-color);
+    background-color: var(--hr-bg-color);
+    margin-top: 1.2em;
     width: 80%;
 }
 .submit-button{
-    background-color: #d35b4d;
-    color: white;
+    background-color: var(--submit-button-bg-color);
+    color: var(--submit-button-text-color);
+    border: 1px solid var(--submit-button-border-color);
     border-radius: 10px;
 }
 .add-coffee-head{
-    color: #e9bd3a;
-     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #d35b4d;
-    text-shadow: 5px 5px #d35b4d;
-    text-align: center
+    color: var(--add-coffee-head-color);
+     -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--add-coffee-head-stroke-color);
+    text-shadow: 1px 1px var(--text-shadow-color);
+    text-align: center;
+    font-family: 'Audiowide';
+    margin-bottom: 1.1em;
 }
 #coffee-list{
-    background: rgba(247, 237, 226 , .9);
+    background: var(--coffee-list-bg-color);
     border-radius: 10px;
-    border: 5px solid #d35b4d;
-    box-shadow: 8px 8px #575656;
+    border: 5px solid var(--coffee-list-border-color);
+    box-shadow: 8px 8px var(--coffee-list-shadow-color);
     border-radius: 10px;
     position: relative;
     margin: 0 auto;
     margin-top: 3rem;
-    color: #e9bd3a;
-    font-family: 'Shrikhand';  
+    color: var(--coffee-list-text-color);
+    font-family: 'Bangers';  
     width: 90%;
     height: 50vh;
     overflow: scroll;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #070707;
+    -webkit-text-stroke-color: var(--coffee-list-text-stroke-color);
+    
 }
 
 .add-coffee-container{
@@ -81,17 +92,24 @@ hr.line {
     margin: 0 auto;
     padding: 3em;
     border-radius: 2em;
-    background-color: rgba(255, 255, 255, .15); 
-    backdrop-filter: blur(5px);
+    border: 1px solid gray;
+    background-color: var(--clear-bg-color); 
+    backdrop-filter: blur(3px);
     z-index: 1;
 }
-.clear:hover{
-    border: 2px solid #d35b4d;
-    box-shadow: inset 0 0 4em #ef3e2b;
+@keyframes pulse {
+    0%{
+        text-shadow:
+    0 0  37px rgb(244, 4, 136),
     
-}
-@media only screen and (max-width: 576px) {
-    body {
-      background-color: lightblue;
     }
-  }
+    50%{
+        text-shadow:
+        0 0 150px rgb(255, 0, 111);
+    }
+    100% {
+        text-shadow:
+    0 0 100px rgba(0, 0, 0 .1),
+    
+    }
+}
