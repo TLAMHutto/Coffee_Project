@@ -12,9 +12,9 @@
     color: var(--title-color);
      -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--stroke-color);
-    text-shadow: 4px 4px var(--text-shadow-color);
+    /* text-shadow: 4px 4px var(--text-shadow-color); */
     text-align: center;
-    animation: pulse 2s infinite;
+    animation: pulse 6s infinite;
 }
 .input-label{
     color: var(--input-color);
@@ -117,16 +117,16 @@ hr.line {
 @keyframes pulse {
     0%{
         text-shadow:
-    0 0  37px rgb(244, 4, 136),
+    0 0  10px #27E5FA,
     
     }
     50%{
         text-shadow:
-        0 0 150px rgb(255, 0, 111);
+        0 0 40px #27E5FA;
     }
     100% {
         text-shadow:
-    0 0 100px rgba(0, 0, 0 .1),
+    0 0 10px #27E5FA,
     
     }
 }
@@ -136,7 +136,7 @@ hr.line {
     }
     
     50%{
-        box-shadow: inset 0 0 30px 30px rgba(255, 0, 221, 0.377);
+        box-shadow: inset 0 0 50px 50px rgba(255, 0, 221, 0.34);
     }
     100% {
         box-shadow: inset 0 0 1px 1px rgb(255, 1, 221);
