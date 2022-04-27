@@ -14,84 +14,87 @@ var coffees = [
     {name: 'Italian', roast: 'dark'},
     {name: 'French', roast: 'dark'},
 ];
+var nameStyle = '<span style="font-size:6vw">';
+var roastStyleDark = '<span style="color:black;font-size:3vw">';
+var roastStyleMedium = '<span style="color:brown;font-size:3vw">';
+var roastStyleLight = '<span style="color:orange;font-size:3vw">';
 
+//function to print coffees to html id=coffee-list
 var list = '';
 coffees.forEach(function(coffee) {
-    if (coffee.roast == 'dark') {
-        list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:black;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+    if(coffee.roast == 'dark') {
+        list += nameStyle + coffee.name + '</span>' + roastStyleDark + coffee.roast + '</span>' + '<br>';
     }
-    if (coffee.roast == 'medium') {
-        list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:brown;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+    if(coffee.roast == 'medium') {
+        list += nameStyle + coffee.name + '</span>' + roastStyleMedium + coffee.roast + '</span>' + '<br>';
     }
-    if (coffee.roast == 'light') {
-        list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:orange;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+    if(coffee.roast == 'light') {
+        list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
     }
 });
-document.getElementById('coffee-list').innerHTML = (list);
- //filter list by roast type id=roast-select
-var roast = document.getElementById('roast-select');
-roast.addEventListener('change', function(e) {
-    var roastType = e.target.value;
-    var filteredCoffees = coffees.filter(function(coffee) {
-         return coffee.roast === roastType; 
+$('#coffee-list').html(list);
+//functin to filter coffees by roast id=roast-select
+$('#roast-select').change(function() {
+    var selected = $('#roast-select').val();
+    var filtered = coffees.filter(function(coffee) {
+        return coffee.roast == selected;
     });
     var list = '';
-    filteredCoffees.forEach(function(coffee) {
-        if (coffee.roast == 'dark') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:black;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+    filtered.forEach(function(coffee) {
+        if(coffee.roast == 'dark') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleDark + coffee.roast + '</span>' + '<br>';
         }
-        if (coffee.roast == 'medium') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:brown;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+        if(coffee.roast == 'medium') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleMedium + coffee.roast + '</span>' + '<br>';
         }
-        if (coffee.roast == 'light') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:orange;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
-        }
-    });
-    document.getElementById('coffee-list').innerHTML = (list);
-});
-//filter list by name id=search-bar
-var search = document.getElementById('search-bar');
-search.addEventListener('keyup', function(e) {
-    var searchTerm = e.target.value;
-    var filteredCoffees = coffees.filter(function(coffee) {
-        return coffee.name.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-    var list = '';
-    filteredCoffees.forEach(function(coffee) {
-        if (coffee.roast == 'dark') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:black;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
-        }
-        if (coffee.roast == 'medium') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:brown;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
-        }
-        if (coffee.roast == 'light') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:orange;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+        if(coffee.roast == 'light') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
         }
     });
-    document.getElementById('coffee-list').innerHTML = (list);
-});
-
+    $('#coffee-list').html(list);
+}
+);
+//function to show all coffees if #roast-select=all
+$('#roast-select').change(function() {
+    var selected = $('#roast-select').val();
+    if(selected == 'all') {
+        var list = '';
+        coffees.forEach(function(coffee) {
+            if(coffee.roast == 'dark') {
+                list += nameStyle + coffee.name + '</span>' + roastStyleDark + coffee.roast + '</span>' + '<br>';
+            }
+            if(coffee.roast == 'medium') {
+                list += nameStyle + coffee.name + '</span>' + roastStyleMedium + coffee.roast + '</span>' + '<br>';
+            }
+            if(coffee.roast == 'light') {
+                list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
+            }
+        });
+        $('#coffee-list').html(list);
+    }
+}
+);
+//function to add new coffee to coffees array
 var nameInput = document.getElementById('addBar');
 var roastType = document.getElementById('roastSelect');
-
-document.querySelector('form.add-coffee-container').addEventListener('submit', function (e) {
+$('form.add-coffee-container').submit(function(e) {
     e.preventDefault();
-    console.log(nameInput.value+ ' ' + roastType.value);
-    console.log(coffees);
     coffees.push({name: nameInput.value, roast: roastType.value});
     var list = '';
     coffees.forEach(function(coffee) {
         if (coffee.roast == 'dark') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:black;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+            list += nameStyle + coffee.name + '</span>' + roastStyleDark + coffee.roast + '</span>' + '<br>';
         }
         if (coffee.roast == 'medium') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:brown;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+            list += nameStyle + coffee.name + '</span>' + roastStyleMedium + coffee.roast + '</span>' + '<br>';
         }
         if (coffee.roast == 'light') {
-            list += "<span style=font-size:6vw>" + coffee.name + "</span>" + "<span style='color:orange;font-size:3vw'>" + coffee.roast + "</span>" + "<br>" ;
+            list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
         }
-    }
-    );
-    document.getElementById('coffee-list').innerHTML = (list);
-});
+    });
+    $('#coffee-list').html(list);
+}
+);
+
+
 
