@@ -95,6 +95,41 @@ $('form.add-coffee-container').submit(function(e) {
     $('#coffee-list').html(list);
 }
 );
+//function when #sortBtn is clicked sort coffees by name
+$('#sortBtn').click(function() {
+    coffees.sort(function(a, b) {
+        if(a.name < b.name) {
+            return -1;
+        }
+        if(a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
+    var list = '';
+    coffees.forEach(function(coffee) {
+        if(coffee.roast == 'dark') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleDark + coffee.roast + '</span>' + '<br>';
+        }
+        if(coffee.roast == 'medium') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleMedium + coffee.roast + '</span>' + '<br>';
+        }
+        if(coffee.roast == 'light') {
+            list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
+        }
+    });
+    $('#coffee-list').html(list);
+}
+);
+
+//if #addBar is empty alert user
+// $('form.add-coffee-container').submit(function(e) {
+//     if(nameInput.value == '') {
+//         alert('Please enter a coffee name');
+//     }
+// }
+// );
+
 
 
 

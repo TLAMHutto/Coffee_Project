@@ -1,7 +1,7 @@
- @import "70s-two.css";
+ @import "variables.css";
  body {
     margin: auto;
-    background-image: url('./img/AridKaleidoscopicBlacklemur-size_restricted.gif');
+    background-image: url('./img/bg-gif.gif');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -54,8 +54,18 @@ hr.line {
 }
 .submit{
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-around;
+    flex-direction: row;
+}
+.sortBtn{
+    background-color: var(--submit-button-bg-color);
+    color: var(--submit-button-text-color);
+    border: 1px solid var(--submit-button-border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: .5em;
+    margin-right: 10em;
+    position: absolute;
 }
 .submit-button{
     background-color: var(--submit-button-bg-color);
@@ -64,6 +74,7 @@ hr.line {
     border-radius: 10px;
     cursor: pointer;
     margin-top: .5em;
+    margin-left: 10em;
     position: absolute;
 }
 .submit-button:active{
