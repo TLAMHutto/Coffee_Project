@@ -1,0 +1,46 @@
+.border-top {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--stroke-color));
+    animation: move 2s linear infinite;
+  }
+  /* .border-right {
+    position: absolute;
+    right: 0;
+    width: 2px;
+    height: 20%;
+    background: linear-gradient(to bottom, transparent, var(--stroke-color));
+    animation: move 2s 1s linear infinite;
+  }
+
+  .border-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, transparent, var(--stroke-color));
+    animation: move 2s linear reverse infinite;
+  }
+
+  .border-left {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, var(--stroke-color));
+    animation: move 2s 1s linear reverse infinite;
+  } */
+  @keyframes move {
+      0%{
+          transform: translateX(0%);
+      }
+      25%{
+        transform: translateX(400%);
+      }
+      50%{
+        transform: translateY(-50%);
+      }
+      
+  }

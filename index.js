@@ -78,6 +78,7 @@ $('#roast-select').change(function() {
 var nameInput = document.getElementById('addBar');
 var roastType = document.getElementById('roastSelect');
 $('form.add-coffee-container').submit(function(e) {
+    
     e.preventDefault();
     coffees.push({name: nameInput.value, roast: roastType.value});
     var list = '';
@@ -91,11 +92,13 @@ $('form.add-coffee-container').submit(function(e) {
         if (coffee.roast == 'light') {
             list += nameStyle + coffee.name + '</span>' + roastStyleLight + coffee.roast + '</span>' + '<br>';
         }
-    });
+    }
+    );
+
     $('#coffee-list').html(list);
-}
+} 
 );
-//function when #sortBtn is clicked sort coffees by name
+// function when #sortBtn is clicked sort coffees by name
 $('#sortBtn').click(function() {
     coffees.sort(function(a, b) {
         if(a.name < b.name) {
